@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+statement=${1:?you need to provide a statement as first argument}
+echo "
+COPY (
+    $statement
+)
+TO
+    STDOUT
+WITH (
+    FORMAT 'csv',
+    DELIMITER ';',
+    HEADER true,
+    QUOTE '\"',
+    ESCAPE E'\\\\',
+    FORCE_QUOTE *,
+    NULL ''
+);
+"
+

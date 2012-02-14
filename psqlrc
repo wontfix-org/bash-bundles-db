@@ -1,0 +1,13 @@
+\pset pager always
+
+\pset null (NULL)
+
+\set PROMPT1 '(%n@%m) %~ %x%R%# '
+
+\set HISTSIZE 5000
+\set HISTFILE ~/.psql_history- :HOST - :DBNAME
+\timing
+
+set search_path to :SEARCHPATH ;
+
+\i ~/.psqlrc.local

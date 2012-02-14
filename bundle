@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export PSQL_EDITOR=${PSQL_EDITOR:=vim -c 'set ft=sql'}
+
+export BBDB_PSQL_PRELOAD=${BBPSQL_PRELOAD:=/lib/libreadline.so.6}
+export BBDB_PSQL_BIN=${BBPSQL_PSQL:=psql}
+
+bb_extend_path $HOME/.bbdb/

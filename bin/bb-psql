@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+searchpath=${1:?need a searchpath}
+shift
+#LD_PRELOAD=/lib/libreadline.so.6 $type "$@" --variable "PROMPT1=%[${!color_var}%]pg [%M] {%n} (%/)%#%[%033[0m%] "
+export LD_PRELOAD=$BBDB_PSQL_PRELOAD
+
+exec $BBDB_PSQL_BIN "$@" --variable "SEARCHPATH=$searchpath"
+
